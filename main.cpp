@@ -122,10 +122,68 @@ int main() {
             }
         }
         else if (pas == 2) {
-            cout << "Valiutos supirkimas." << endl;
+            cout << "Pasirinkite valiuta, kuria keisime:" << endl;
+            valPasirink();
+            cin >> x;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(69, '\n');
+                cout << "Neteisingas pasirinkimas." << endl;
+                continue;
+            }
+            if (x == 1) {
+                cout << "Iveskite suma eurais: ";
+                kiek = kiekIvestis(kiek);
+                cout << fixed << setprecision(2);
+                cout << "Valiutos supirkimas: " << kiek << " EUR = " << kiek * GBP_PIRKTI << " GBP" << endl;
+            }
+            else if (x == 2) {
+                cout << "Iveskite suma eurais: ";
+                kiek = kiekIvestis(kiek);
+                cout << fixed << setprecision(2);
+                cout << "Valiutos supirkimas: " << kiek << " EUR = " << kiek * USD_PIRKTI << " USD" << endl;
+            }
+            else if (x == 3) {
+                cout << "Iveskite suma eurais: ";
+                kiek = kiekIvestis(kiek);
+                cout << fixed << setprecision(2);
+                cout << "Valiutos supirkimas: " << kiek << " EUR = " << kiek * INR_PIRKTI << " INR" << endl;
+            }
+            else {
+                cout << "Jusu pasirinkimas netinkamas." << endl;
+            }
         }
         else if (pas == 3) {
-            cout << "Valiutos lombardas." << endl;
+            cout << "Pasirinkite valiuta, kuria keisime:" << endl;
+            valPasirink();
+            cin >> x;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(69, '\n');
+                cout << "Neteisingas pasirinkimas." << endl;
+                continue;
+            }
+            if (x == 1) {
+                cout << "Iveskite GBP kieki: ";
+                kiek = kiekIvestis(kiek);
+                cout << fixed << setprecision(2);
+                cout << "Valiutos lombardas: " << kiek << " GBP = " << kiek / GBP_PARDUOTI << " EUR" << endl;
+            }
+            else if (x == 2) {
+                cout << "Iveskite USD kieki: ";
+                kiek = kiekIvestis(kiek);
+                cout << fixed << setprecision(2);
+                cout << "Valiutos lombardas: " << kiek << " USD = " << kiek / USD_PARDUOTI << " EUR" << endl;
+            }
+            else if (x == 3) {
+                cout << "Iveskite INR kieki: ";
+                kiek = kiekIvestis(kiek);
+                cout << fixed << setprecision(2);
+                cout << "Valiutos lombardas: " << kiek << " INR = " << kiek / INR_PARDUOTI << " EUR" << endl;
+            }
+            else {
+                cout << "Jusu pasirinkimas netinkamas." << endl;
+            }
         }
         else if (pas == 4) {
             cout << "Durys uzsidaro." << endl;
