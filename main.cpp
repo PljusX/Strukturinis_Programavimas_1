@@ -29,7 +29,97 @@ int main() {
             continue;
         }
         if (pas == 1) {
-            cout << "Valiutos palyginimai." << endl;
+            int y;
+            cout << "Pasirinkite valiuta, kuria lyginsime:" << endl;
+            valPasirink();
+            cin >> x;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(69, '\n');
+                cout << "Neteisingas pasirinkimas." << endl;
+                continue;
+            }
+            if (x == 1) {
+                cout << "1. EUR -> GBP" << endl;
+                cout << "2. GBP -> EUR" << endl;
+                cin >> y;
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(69, '\n');
+                    cout << "Neteisingas pasirinkimas." << endl;
+                    continue;
+                }
+                if (y == 1) {
+                    cout << "Iveskite suma eurais: ";
+                    kiek = kiekIvestis(kiek);
+                    cout << fixed << setprecision(2);
+                    cout << kiek << " EUR = " << kiek * GBP_BENDRAS << " GBP" << endl;
+                }
+                else if (y == 2) {
+                    cout << "Iveskite suma svarais: ";
+                    kiek = kiekIvestis(kiek);
+                    cout << fixed << setprecision(2);
+                    cout << kiek << " GBP = " << kiek / GBP_BENDRAS << " EUR" << endl;
+                }
+                else {
+                    cout << "Tokio pasirinkimo nera." << endl;
+                }
+            }
+            else if (x == 2) {
+                cout << "1. EUR -> USD" << endl;
+                cout << "2. USD -> EUR" << endl;
+                cin >> y;
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(69, '\n');
+                    cout << "Neteisingas pasirinkimas." << endl;
+                    continue;
+                }
+                if (y == 1) {
+                    cout << "Iveskite suma eurais: ";
+                    kiek = kiekIvestis(kiek);
+                    cout << fixed << setprecision(2);
+                    cout << kiek << " EUR = " << kiek * USD_BENDRAS << " USD" << endl;
+                }
+                else if (y == 2) {
+                    cout << "Iveskite suma doleriais: ";
+                    kiek = kiekIvestis(kiek);
+                    cout << fixed << setprecision(2);
+                    cout << kiek << " USD = " << kiek / USD_BENDRAS << " EUR" << endl;
+                }
+                else {
+                    cout << "Tokio pasirinkimo nera." << endl;
+                }
+            }
+            else if (x == 3) {
+                cout << "1. EUR -> INR" << endl;
+                cout << "2. INR -> EUR" << endl;
+                cin >> y;
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(69, '\n');
+                    cout << "Neteisingas pasirinkimas." << endl;
+                    continue;
+                }
+                if (y == 1) {
+                    cout << "Iveskite suma eurais: ";
+                    kiek = kiekIvestis(kiek);
+                    cout << fixed << setprecision(2);
+                    cout << kiek << " EUR = " << kiek * INR_BENDRAS << " INR" << endl;
+                }
+                else if (y == 2) {
+                    cout << "Iveskite suma rupijomis: ";
+                    kiek = kiekIvestis(kiek);
+                    cout << fixed << setprecision(2);
+                    cout << kiek << " INR = " << kiek / INR_BENDRAS << " EUR" << endl;
+                }
+                else {
+                    cout << "Tokio pasirinkimo nera." << endl;
+                }
+            }
+            else {
+                cout << "Jusu pasirinkimas netinkamas." << endl;
+            }
         }
         else if (pas == 2) {
             cout << "Valiutos supirkimas." << endl;
