@@ -227,5 +227,6 @@ double kiekIvestis(double kiek) {
             return 0;
         }
     }
-    return kiek;
+    return kiek;//g++ main.cpp -o programa.exe
+                //.\programa.exe  (ČIA MAN, KAD PASILEISTŲ PROGRAMA) + ctrl alt n
 }
